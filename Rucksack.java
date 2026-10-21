@@ -4,11 +4,25 @@ public class Rucksack
     private int     volumen;
     private boolean wasserdicht;
     
-    public Rucksack (String neuFarbe, int neuVolumen, boolean neuWasserdicht)
+    public Rucksack (String farbe, int volumen, boolean wasserdicht)
     {
-        setFarbe (neuFarbe);
-        setVolumen (neuVolumen);
-        setWasserdicht (neuWasserdicht);
+        setFarbe (farbe);
+        setVolumen (volumen);
+        setWasserdicht (wasserdicht);
+    }
+    
+    public Rucksack (String farbe, int volumen)
+    {
+        setFarbe (farbe);
+        setVolumen (volumen);
+        setWasserdicht (false);
+    }
+    
+    public Rucksack ()
+    {
+        setFarbe ("UNKN");
+        setVolumen (0);
+        setWasserdicht (false);
     }
     
     public String getFarbe()
@@ -26,9 +40,9 @@ public class Rucksack
         return wasserdicht;
     }
     
-    public void setFarbe(String neuFarbe)
+    public void setFarbe(String farbe)
     {
-        farbe = neuFarbe;
+        this.farbe = farbe;
     }
     
     public void setVolumen(int volumen)
@@ -39,5 +53,10 @@ public class Rucksack
     public void setWasserdicht(boolean wasserdicht)
     {
         this.wasserdicht = wasserdicht;
+    }
+    
+    public void printRucksack()
+    {
+        System.out.println(farbe + " Rucksack: " + volumen + " Liter - " + wasserdicht);
     }
 }
